@@ -1,0 +1,23 @@
+@mixin flexbox($x, $y) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin btn($bg, $color, $fs) {
+  padding: 10px;
+  background-color: $bg;
+  font-weight: 600;
+  font-size: $fs;
+  line-height: 130%;
+  color: $color;
+  border-radius: 0;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(0.9);
+  }
+}

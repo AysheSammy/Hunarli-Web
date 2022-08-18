@@ -1,0 +1,30 @@
+// primary colors
+$primary_dark: #000000;
+$primary: #242424;
+$primary_light: #848484;
+
+// secondary colors
+$secondary_dark: #f2f2f2;
+$secondary: #f8f8f8;
+$secondary_light: #ffffff;
+
+// accent colors
+$accent_dark: #fc6421;
+$accent: #eeff00;
+$accent_light: #f5ff69;
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $primary_light;
+  border-radius: 10px;
+}
+

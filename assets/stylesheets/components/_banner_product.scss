@@ -1,0 +1,39 @@
+.banner_product {
+  width: 200px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  border-right: 5px solid $accent_dark;
+  border-bottom: 5px solid $accent_dark;
+  box-sizing: content-box;
+  margin-right: 30px;
+
+  img {
+    width: 200px;
+    height: 170px;
+  }
+
+  p.name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: $secondary;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  p.price {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: $accent_dark;
+    display: inline-block;
+    margin-right: 55px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  button {
+    @include btn($accent_dark, $secondary_light, 12px);
+  }
+}

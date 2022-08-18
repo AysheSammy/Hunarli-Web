@@ -1,0 +1,12 @@
+// base
+@import './base/reset', './base/variables', './base/mixins';
+
+// components
+@import './components/header';
+@import './components/category_banner';
+@import './components/banner_product';
+@import './components/footer';
+@import './components/serach_bar';
+
+// pages
+@import './pages/index';
