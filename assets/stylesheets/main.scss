@@ -1,12 +1,16 @@
 // base
-@import './base/reset', './base/variables', './base/mixins';
+@import "./base/reset", "./base/variables", "./base/mixins";
 
 // components
-@import './components/header';
-@import './components/category_banner';
-@import './components/banner_product';
-@import './components/footer';
-@import './components/serach_bar';
+@import "./components/header";
+@import "./components/category_banner";
+@import "./components/footer";
+@import "./components/serach_bar";
+// product
+@import "./components/product/banner_product";
+@import "./components/product/product";
 
 // pages
-@import './pages/index';
+@import "./pages/index";
+@import "./pages/products";
+@import "./pages/registration";

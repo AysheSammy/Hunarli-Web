@@ -3,7 +3,6 @@ footer {
   height: auto;
   background-color: $primary;
   padding: 3% 5%;
-  margin-top: 20px;
   @include flexbox(space-between, center);
 
   .contacts {

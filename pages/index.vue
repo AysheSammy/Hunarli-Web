@@ -15,7 +15,7 @@
         </div>
 
         <div class="category_banners">
-            <Category_banner v-for="(e, i) in category_banner"  :key="i" :infos="e"/>
+            <CategoryBanner v-for="(e, i) in category_banner"  :key="i" :infos="e"/>
         </div>
 
     </div>
@@ -26,12 +26,10 @@ import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import CategoryBanner from '@/components/category_banner.vue';
-import Category_banner from '../components/category_banner.vue';
 export default {
     components: {
     VueSlickCarousel,
     CategoryBanner,
-    Category_banner
 },
     data() {
         return {

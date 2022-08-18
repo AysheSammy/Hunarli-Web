@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import BannerProduct from './banner_product.vue';
+import BannerProduct from './product/banner_product.vue';
 export default {
     components: {
         BannerProduct,

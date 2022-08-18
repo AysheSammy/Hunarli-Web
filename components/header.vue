@@ -34,13 +34,13 @@
                     <nuxt-link :to="e.href">
                         {{ e.name_tm }}
                     </nuxt-link>
-                    <img src="../assets/images/icons/dropdown.svg" v-if="e.sub_category">
+                    <img src="../assets/images/icons/dropdown.svg" v-if="e.sub_category_tm">
 
-                    <div class="sub_category" v-if="e.sub_category">
+                    <div class="sub_category" v-if="e.sub_category_tm">
                         <div class="by_category">
                             <p class="title">Kategoriýa boýunça</p>
 
-                            <p v-for="(a, s) in e.sub_category" :key="s">
+                            <p v-for="(a, s) in e.sub_category_tm" :key="s">
                                 <nuxt-link to="/products">{{ a }}</nuxt-link>
                             </p>
 
@@ -93,7 +93,7 @@ export default {
                     id: 1,
                     name_tm: 'Aşhana',
                     name_ru: 'Питание',
-                    sub_category: [
+                    sub_category_tm: [
                         'Naharlar',
                         'Salatlar',
                         'Süýjilikler',
@@ -107,7 +107,7 @@ export default {
                     id: 2,
                     name_tm: 'Egin-eşik',
                     name_ru: 'Одежда',
-                    sub_category: [
+                    sub_category_tm: [
                         'Ýaka / Tahýa',
                         'Taýýar köýnek',
                         'Çaga eşik',
@@ -121,7 +121,7 @@ export default {
                     id: 3,
                     name_tm: 'Şaý-sep',
                     name_ru: 'Ювелирные изделия',
-                    sub_category: [
+                    sub_category_tm: [
                         'Bilezik',
                         'Monjuk',
                         'Täç',
@@ -134,7 +134,7 @@ export default {
                     id: 4,
                     name_tm: 'Toý serpaý',
                     name_ru: 'Свадьба окончена',
-                    sub_category: [
+                    sub_category_tm: [
                         'Şekerlik',
                         'El-işi',
                         'Magnit',
@@ -146,7 +146,7 @@ export default {
                     id: 1,
                     name_tm: 'Oýunjak',
                     name_ru: 'Игрушка',
-                    sub_category: [
+                    sub_category_tm: [
                         'Ýumşak oýunjak',
                         'Tagtadan oýunjak',
                         'Düzülýän oýunjak',
