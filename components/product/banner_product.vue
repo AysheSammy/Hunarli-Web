@@ -1,9 +1,9 @@
 <template>
   <div class="banner_product">
     <img :src="require(`../../assets/images/products/${info.img}`)" alt="">
-    <p class="name">{{ info.name_tm }}</p>
+    <p class="name">{{ $tt(info.name_tm, info.name_ru) }}</p>
     <p class="price">{{ info.price }}M</p>
-    <button>Sebede goş</button>
+    <button>{{ $tt('Haladym', 'Liked') }}</button>
   </div>
 </template>
 

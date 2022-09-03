@@ -11,6 +11,7 @@ footer {
       font-size: 20px;
       line-height: 23px;
       color: $secondary_light;
+      text-align: right;
     }
 
     .contact {
@@ -22,7 +23,7 @@ footer {
         display: inline-block;
         width: 24px;
         height: 24px;
-        margin-right: 15px;
+        margin-left: 30px;
       }
       p.link {
         display: inline-block;
@@ -30,7 +31,8 @@ footer {
         font-size: 16px;
         line-height: 24px;
         color: $secondary;
-        margin-right: 30px;
+        margin-left: 15px;
+        text-align: right;
       }
     }
   }

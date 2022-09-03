@@ -69,12 +69,30 @@ a {
 .header header .elements .element:hover p {
   color: #eeff00;
 }
+.header header .elements .element .like {
+  position: relative;
+}
+.header header .elements .element .like span {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000000;
+  background-color: #eeff00;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -13px;
+}
 .header header .elements .element p {
   margin-top: 10px;
   transition: 0.3s ease-in-out;
 }
 .header nav {
   margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .header nav > ul {
   display: flex;
@@ -168,6 +186,46 @@ a {
   color: #242424;
   text-align: center;
 }
+.header nav > ul > li button {
+  background-color: transparent;
+  padding: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.header nav > ul > li button:hover {
+  color: #eeff00;
+}
+.header nav > ul > li button:first-child {
+  border-right: 1px solid #f8f8f8;
+}
+.header nav > ul > li button.active {
+  color: #eeff00;
+}
+.header nav a.categories_title {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .header nav {
+    flex-direction: row-reverse;
+  }
+  .header nav > ul li {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .header nav > ul li a,
+.header nav > ul li img {
+    display: none;
+  }
+  .header nav a.categories_title {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    color: #f8f8f8;
+  }
+}
 
 .category_banner {
   width: 100%;
@@ -186,7 +244,7 @@ a {
   left: 0;
   z-index: -1;
 }
-.category_banner .products {
+.category_banner .banner_products {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -240,6 +298,7 @@ footer .contacts p.title {
   font-size: 20px;
   line-height: 23px;
   color: #ffffff;
+  text-align: right;
 }
 footer .contacts .contact {
   display: inline-block;
@@ -252,7 +311,7 @@ footer .contacts .contact img {
   display: inline-block;
   width: 24px;
   height: 24px;
-  margin-right: 15px;
+  margin-left: 30px;
 }
 footer .contacts .contact p.link {
   display: inline-block;
@@ -260,7 +319,8 @@ footer .contacts .contact p.link {
   font-size: 16px;
   line-height: 24px;
   color: #f8f8f8;
-  margin-right: 30px;
+  margin-left: 15px;
+  text-align: right;
 }
 footer a.register {
   padding: 10px;
@@ -286,9 +346,7 @@ footer a.register:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 55px;
+  left: -5%;
   z-index: 10;
 }
 .search_bar .search {
@@ -403,7 +461,7 @@ footer a.register:hover {
   margin-top: 10px;
 }
 .product p.seller,
-.product p.date {
+.product p.product_date {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -441,7 +499,7 @@ footer a.register:hover {
   line-height: 21px;
   color: #000000;
   background-color: #eeff00;
-  padding: 5px 10px;
+  padding: 5px 5px;
 }
 .product .new span.like {
   display: inline-block;
@@ -460,6 +518,182 @@ footer a.register:hover {
   -o-object-fit: cover;
      object-fit: cover;
   vertical-align: middle;
+}
+
+.sign {
+  width: 100%;
+  min-height: 100vh;
+}
+.sign h4 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+  text-align: center;
+  margin: 40px 0;
+}
+.sign .form {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+.sign .form input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  padding: 15px 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #242424;
+  border-radius: 0;
+}
+.sign .form input:active, .sign .form input:focus {
+  outline: 1px solid #fc6421;
+  border: 1px solid #fc6421;
+}
+.sign .form .password {
+  position: relative;
+}
+.sign .form .password .eye {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+}
+.sign .form button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #fc6421;
+  background-color: #fc6421;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #f8f8f8;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.sign .form button:hover {
+  background-color: #ffffff;
+  color: #fc6421;
+}
+.sign p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #242424;
+  margin-top: 20px;
+}
+.sign button {
+  display: block;
+  width: 50%;
+  height: 50px;
+  margin: 20px auto;
+  border: 2px solid #fc6421;
+  background-color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fc6421;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.sign button:hover {
+  background-color: #fc6421;
+  color: #ffffff;
+}
+
+.profil h4 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+}
+.profil .datas {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profil .datas .input {
+  width: 45%;
+  margin-bottom: 30px;
+}
+.profil .datas .input label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242424;
+}
+.profil .datas .input input {
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background: #f2f2f2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #101828;
+  border: none;
+  padding: 8px 16px;
+}
+.profil .datas .input .password {
+  position: relative;
+}
+.profil .datas .input .password .eye {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+.profil .datas button {
+  width: 20%;
+  height: 40px;
+  background-color: #eeff00;
+  border: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  color: #242424;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.profil .datas button:hover {
+  scale: 1.05;
+}
+
+.likes h4 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+}
+.likes p.date {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  margin-top: 15px;
+}
+.likes .products {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
 }
 
 .home {
@@ -574,4 +808,60 @@ footer a.register:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+}
+
+.profile {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  padding: 0 5%;
+}
+.profile h3 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 47px;
+  color: #000000;
+  margin-bottom: 50px;
+  padding-top: 40px;
+}
+.profile_drawer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.profile_drawer .drawer {
+  width: 20%;
+  height: 100%;
+}
+.profile_drawer .drawer ul {
+  list-style: none;
+}
+.profile_drawer .drawer ul li {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  cursor: pointer;
+}
+.profile_drawer .drawer ul li img {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+.profile_drawer .drawer ul .active {
+  background-color: #ffffff;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.15);
+}
+.profile_drawer .drawer_page {
+  width: 75%;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }/*# sourceMappingURL=main.css.map */

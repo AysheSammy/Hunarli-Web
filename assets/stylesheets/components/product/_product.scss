@@ -22,7 +22,7 @@
   }
 
   p.seller,
-  p.date {
+  p.product_date {
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -58,7 +58,7 @@
       line-height: 21px;
       color: $primary-dark;
       background-color: $accent;
-      padding: 5px 10px;
+      padding: 5px 5px;
     }
 
     span.like {

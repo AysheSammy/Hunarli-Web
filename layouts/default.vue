@@ -1,31 +1,36 @@
 <template>
     <div class="main">
-        <Header />
-        <SearchBar @isSearchActive="search" v-if="isSearch"/>
+        <Header @see-favorite="see_likes" />
+        <Likes_drawer v-if="showLikes" />
         <nuxt />
-        <Footer />
+        <Footer v-if="route_path != '/registration'" />
     </div>
 </template>
 
 <script>
 import Header from '@/components/header.vue';
 import Footer from '@/components/footer.vue';
-import SearchBar from '@/components/search_bar.vue';
+import Likes_drawer from '../components/likes_drawer.vue';
 
 export default {
     components: {
         Header,
         Footer,
-        SearchBar,
+        Likes_drawer
     },
     data(){
-        return{
-            isSearch: false,
+        return {
+            showLikes: false,
         }
     },
-    methods:{
-        search(val){
-            this.isSearch = val;
+    computed: {
+        route_path() {
+            return this.$route.path;
+        },
+    },
+    methods: {
+        see_likes(){
+            return this.showLikes = !this.showLikes;
         }
     }
 }

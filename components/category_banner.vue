@@ -1,12 +1,12 @@
 <template>
     <div class="category_banner">
         <img :src="require('./../assets/images/' + infos.bg_image)" alt="">
-        <div class="products">
+        <div class="banner_products">
             <BannerProduct v-for="(e, i) in infos.products" :key="i" :info="e" />
         </div>
         <div class="banner_info">
-            <h2>{{ infos.title }}</h2>
-            <button>Ýene gör</button>
+            <h2>{{ $tt(infos.title_tm, infos.title_ru) }}</h2>
+            <button>{{ $tt('Ýene gör', 'Posmotret wse') }}</button>
         </div>
 
     </div>

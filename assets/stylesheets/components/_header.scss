@@ -28,6 +28,22 @@
           }
         }
 
+        .like {
+          position: relative;
+          span {
+            display: inline-block;
+            padding: 3px 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: $primary_dark;
+            background-color: $accent;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -13px;
+          }
+        }
+
         p {
           margin-top: 10px;
           transition: 0.3s ease-in-out;
@@ -38,6 +54,7 @@
 
   nav {
     margin-top: 25px;
+    @include flexbox(center, flex-start);
 
     & > ul {
       @include flexbox(center, center);
@@ -103,7 +120,7 @@
               }
             }
           }
-          
+
           .best_sellers {
             width: 50%;
             p {
@@ -115,9 +132,9 @@
             }
 
             &_products {
-                width: 100%;
-            //   @include flexbox(flex-start, flex-start);
-            //   overflow-x: scroll;
+              width: 100%;
+              //   @include flexbox(flex-start, flex-start);
+              //   overflow-x: scroll;
               // ::-webkit-scrollbar{
               //     color: red;
               // }
@@ -139,6 +156,49 @@
             }
           }
         }
+        button {
+          background-color: transparent;
+          padding: 5px;
+          border: none;
+          color: $secondary_light;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            color: $accent;
+          }
+
+          &:first-child {
+            border-right: 1px solid $secondary;
+          }
+        }
+
+        button.active {
+          color: $accent;
+        }
+      }
+    }
+
+    a.categories_title {
+      display: none;
+    }
+
+    @include tablet {
+        flex-direction: row-reverse;
+        & > ul {
+        li {
+          width: fit-content;
+          a,
+          img {
+            display: none;
+          }
+        }
+      }
+      a.categories_title {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        color: $secondary;
       }
     }
   }

@@ -7,7 +7,7 @@
                     <img :src="require('./../assets/images/' + e.img)" alt="">
                     <div class="banner_text">
                         <p>
-                            {{ e.title_tm }}
+                            {{ $tt(e.title_tm, e.title_ru) }}
                         </p>
                     </div>
                 </div>
@@ -15,8 +15,9 @@
         </div>
 
         <div class="category_banners">
-            <CategoryBanner v-for="(e, i) in category_banner"  :key="i" :infos="e"/>
+            <CategoryBanner v-for="(e, i) in category_banner" :key="i" :infos="e" />
         </div>
+
 
     </div>
 </template>
@@ -28,9 +29,9 @@ import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 import CategoryBanner from '@/components/category_banner.vue';
 export default {
     components: {
-    VueSlickCarousel,
-    CategoryBanner,
-},
+        VueSlickCarousel,
+        CategoryBanner,
+    },
     data() {
         return {
             banners: [
@@ -65,7 +66,8 @@ export default {
                 {
                     id: 1,
                     bg_image: 'meal_banner_bg.png',
-                    title: 'Öýde bişen naharlar...',
+                    title_tm: 'Öýde bişen naharlar...',
+                    title_ru: 'Öýde bişen naharlar...',
                     products: [
                         {
                             img: '1.png',
@@ -90,7 +92,8 @@ export default {
                 {
                     id: 2,
                     bg_image: 'clothes_banner_bg.png',
-                    title: 'Egin-eşikler',
+                    title_tm: 'Egin-eşikler',
+                    title_ru: 'Egin-eşikler',
                     products: [
                         {
                             img: '2.png',
@@ -115,7 +118,8 @@ export default {
                 {
                     id: 3,
                     bg_image: 'jewelry_banner_bg.png',
-                    title: 'Şaý-sepler',
+                    title_tm: 'Şaý-sepler',
+                    title_ru: 'Şaý-sepler',
                     products: [
                         {
                             img: '3.png',
@@ -140,7 +144,8 @@ export default {
                 {
                     id: 4,
                     bg_image: 'toys_banner_bg.png',
-                    title: 'Oýunjaklar',
+                    title_tm: 'Oýunjaklar',
+                    title_ru: 'Oýunjaklar',
                     products: [
                         {
                             img: '4.png',
@@ -164,6 +169,7 @@ export default {
                 },
             ]
         }
-    }
+    },
+ 
 }
 </script>

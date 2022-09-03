@@ -1,0 +1,71 @@
+.profil {
+  h4 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    color: $primary_dark;
+  }
+
+  .datas {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 100%;
+    @include flexbox(space-between, center);
+    flex-wrap: wrap;
+
+    .input {
+      width: 45%;
+      margin-bottom: 30px;
+
+      label {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: $primary;
+    }
+    
+    input {
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+        height: 40px;
+        background: $secondary_dark;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #101828;
+        border: none;
+        padding: 8px 16px;
+      }
+      .password {
+        position: relative;
+        .eye {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          cursor: pointer;
+        }
+      }
+
+    }
+    button {
+      width: 20%;
+      height: 40px;
+      background-color: $accent;
+      border: none;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      color: $primary;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+
+      &:hover{
+        scale: 1.05;
+      }
+    }
+  }
+}

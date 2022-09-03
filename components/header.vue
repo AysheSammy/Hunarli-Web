@@ -1,80 +1,104 @@
 <template>
-    <div class="header">
-        <header>
-            <div class="elements">
-                <div class="element" @click="search()">
-                    <img src="../assets/images/icons/search.svg" alt="">
-                    <p>gözle</p>
-                </div>
-                <nuxt-link to="selling" class="element">
-                    <img src="../assets/images/icons/coins.svg" alt="">
-                    <p>satyş</p>
-                </nuxt-link>
-            </div>
-
-            <nuxt-link to="/">
-                <img src="../static/logo-light.svg" alt="">
-            </nuxt-link>
-
-            <div class="elements">
-                <nuxt-link to="registration" class="element">
-                    <img src="../assets/images/icons/bulb.svg" alt="">
-                    <p>giriş</p>
-                </nuxt-link>
-                <div class="element">
-                    <img src="../assets/images/icons/heart.svg" alt="">
-                    <p>halanlarym</p>
-                </div>
-            </div>
-        </header>
-
-        <nav>
-            <ul>
-                <li v-for="(e, i) in categories" :key="i">
-                    <nuxt-link :to="e.href">
-                        {{ e.name_tm }}
-                    </nuxt-link>
-                    <img src="../assets/images/icons/dropdown.svg" v-if="e.sub_category_tm">
-
-                    <div class="sub_category" v-if="e.sub_category_tm">
-                        <div class="by_category">
-                            <p class="title">Kategoriýa boýunça</p>
-
-                            <p v-for="(a, s) in e.sub_category_tm" :key="s">
-                                <nuxt-link to="/products">{{ a }}</nuxt-link>
-                            </p>
-
-                        </div>
-                        <div class="by_price">
-                            <p class="title">Bahasy boýunça</p>
-
-                            <p>
-                                <nuxt-link to="/products">50M - 200M</nuxt-link>
-                            </p>
-                            <p>
-                                <nuxt-link to="/products">200M - 500M</nuxt-link>
-                            </p>
-                            <p>
-                                <nuxt-link to="/products">500M - </nuxt-link>
-                            </p>
-
-                        </div>
-                        <div class="best_sellers">
-                            <p>Satyjylardan köp satanlar</p>
-                            <div class="best_sellers_products">
-                                <VueSlickCarousel v-bind="settings">
-                                    <div v-for="(e, i) in best_sellers" :key="i">
-                                        <img :src="require('../assets/images/' + e.img)" alt="">
-                                        <p>{{ e.name_tm }}</p>
-                                    </div>
-                                </VueSlickCarousel>
-                            </div>
-
-                        </div>
+    <div class="header_all">
+        <div class="header">
+            <header>
+                <div class="elements">
+                    <div class="element" @click="search">
+                        <img src="../assets/images/icons/search.svg" alt="">
+                        <p>{{ $tt('gözle', 'search') }}</p>
                     </div>
-                </li>
-            </ul>
-        </nav>
+                    <nuxt-link to="selling" class="element">
+                        <img src="../assets/images/icons/coins.svg" alt="">
+                        <p>{{ $tt('satyş', 'sell') }}</p>
+                    </nuxt-link>
+                </div>
+
+                <nuxt-link to="/">
+                    <img src="../static/logo-light.svg" alt="">
+                </nuxt-link>
+
+                <div class="elements">
+                    <nuxt-link v-if="isAuth" to="profile" class="element">
+                        <img src="../assets/images/icons/bulb.svg" alt="">
+                        <p>{{ $tt('profil', 'prolfiel') }}</p>
+                    </nuxt-link>
+
+                    <nuxt-link v-else to="registration" class="element">
+                        <img src="../assets/images/icons/bulb.svg" alt="">
+                        <p>{{ $tt('giriş', 'login') }}</p>
+                    </nuxt-link>
+
+                    <div class="element" @click="seeFavorite">
+                        <div class="like">
+                            <img src="../assets/images/icons/heart.svg" alt="">
+                            <span v-if="number_liked > 0">{{ number_liked }}</span>
+                        </div>
+                        <p>{{ $tt('halanlarym', 'likees') }}</p>
+                    </div>
+                </div>
+            </header>
+
+            <nav>
+                <ul>
+                    <li v-for="(e, i) in categories" :key="i">
+                        <nuxt-link :to="e.href">
+                            {{ $tt(e.name_tm, e.name_ru) }}
+                        </nuxt-link>
+                        <img src="../assets/images/icons/dropdown.svg" v-if="e.sub_category_tm">
+
+                        <div class="sub_category" v-if="e.sub_category_tm">
+                            <div class="by_category">
+                                <p class="title">{{ $tt('Kategoriýa boýunça', 'By category') }}</p>
+
+                                <p v-for="(a, s) in e.sub_category_tm" :key="s">
+                                    <nuxt-link v-if="lang == 'tm'" to="/products">{{ a }}</nuxt-link>
+                                </p>
+
+                                <p v-for="(a, s) in e.sub_category_ru" :key="s">
+                                    <nuxt-link v-if="lang == 'ru'" to="/products">{{ a }}</nuxt-link>
+                                </p>
+
+
+                            </div>
+                            <div class="by_price">
+                                <p class="title">{{ $tt('Bahasy boýunça', 'By costs') }}</p>
+
+                                <p>
+                                    <nuxt-link to="/products">50M - 200M</nuxt-link>
+                                </p>
+                                <p>
+                                    <nuxt-link to="/products">200M - 500M</nuxt-link>
+                                </p>
+                                <p>
+                                    <nuxt-link to="/products">500M - </nuxt-link>
+                                </p>
+
+                            </div>
+                            <div class="best_sellers">
+                                <p>{{ $tt('Satyjylardan köp satanlar', 'Cok satanlar') }}</p>
+                                <div class="best_sellers_products">
+                                    <VueSlickCarousel v-bind="settings">
+                                        <div v-for="(e, i) in best_sellers" :key="i">
+                                            <img :src="require('../assets/images/' + e.img)" alt="">
+                                            <p>{{ $tt(e.name_tm, e.name_ru) }}</p>
+                                        </div>
+                                    </VueSlickCarousel>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button v-for="(e, i) in locales" :key="i" :class="{ 'active': e.code == lang }"
+                            @click="$i18n.setLocale(e.code)">{{ e.name
+                            }}</button>
+                    </li>
+                </ul>
+                <nuxt-link to="/products" class="categories_title">{{$tt('Kategoriýalar', 'Категории')}}</nuxt-link>
+            </nav>
+
+        </div>
+        <SearchBar v-if="isSearchActive" />
     </div>
 </template>
 
@@ -82,80 +106,14 @@
 import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+import SearchBar from '@/components/search_bar.vue';
 export default {
     components: {
         VueSlickCarousel,
+        SearchBar,
     },
     data() {
         return {
-            categories: [
-                {
-                    id: 1,
-                    name_tm: 'Aşhana',
-                    name_ru: 'Питание',
-                    sub_category_tm: [
-                        'Naharlar',
-                        'Salatlar',
-                        'Süýjilikler',
-                        'Hamyr önümleri',
-                        'Azyk önümler',
-                    ],
-                    href: '/products',
-                    active: true
-                },
-                {
-                    id: 2,
-                    name_tm: 'Egin-eşik',
-                    name_ru: 'Одежда',
-                    sub_category_tm: [
-                        'Ýaka / Tahýa',
-                        'Taýýar köýnek',
-                        'Çaga eşik',
-                        'Jempir',
-                        'Palto'
-                    ],
-                    href: '/products',
-                    active: false
-                },
-                {
-                    id: 3,
-                    name_tm: 'Şaý-sep',
-                    name_ru: 'Ювелирные изделия',
-                    sub_category_tm: [
-                        'Bilezik',
-                        'Monjuk',
-                        'Täç',
-                        'Ýüzük',
-                    ],
-                    href: '/products',
-                    active: false
-                },
-                {
-                    id: 4,
-                    name_tm: 'Toý serpaý',
-                    name_ru: 'Свадьба окончена',
-                    sub_category_tm: [
-                        'Şekerlik',
-                        'El-işi',
-                        'Magnit',
-                    ],
-                    href: '/products',
-                    active: false
-                },
-                {
-                    id: 1,
-                    name_tm: 'Oýunjak',
-                    name_ru: 'Игрушка',
-                    sub_category_tm: [
-                        'Ýumşak oýunjak',
-                        'Tagtadan oýunjak',
-                        'Düzülýän oýunjak',
-                    ],
-                    href: '/products',
-                    active: false
-                },
-            ],
-
             best_sellers: [
                 {
                     img: 'best-seller-product.png',
@@ -238,15 +196,29 @@ export default {
             isSearchActive: false,
         }
     },
-    computed: {
-        isSearch(){
-            return this.isSearchActive;
+    methods: {
+        search() {
+            this.isSearchActive = !this.isSearchActive;
+        },
+        seeFavorite(){
+            this.$emit('see-favorite');
         }
     },
-    methods: {
-        search(){
-            this.isSearchActive = true;
-            this.$emit('isSearchActive', this.isSearch)
+    computed: {
+        categories() {
+            return this.$store.getters['categories/categories'];
+        },
+        isAuth() {
+            return this.$store.getters.isAuthenticated;
+        },
+        locales() {
+            return this.$i18n.locales
+        },
+        lang() {
+            return this.$i18n.locale
+        },
+        number_liked() {
+            return this.$store.getters['liked/count_liked']
         }
     }
 }

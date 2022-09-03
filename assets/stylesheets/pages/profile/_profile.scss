@@ -1,0 +1,58 @@
+.profile {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $secondary_dark;
+  padding: 0 5%;
+
+  h3 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 47px;
+    color: $primary_dark;
+    margin-bottom: 50px;
+    padding-top: 40px;
+  }
+  &_drawer {
+    width: 100%;
+    height: auto;
+    @include flexbox(space-between, flex-start);
+
+    .drawer {
+      width: 20%;
+      height: 100%;
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-bottom: 20px;
+          @include flexbox(flex-start, center);
+          padding: 10px 15px;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          color: $primary_dark;
+          cursor: pointer;
+
+          img {
+            width: 24px;
+            height: 24px;
+            margin-right: 16px;
+          }
+        }
+
+        .active {
+          background-color: $secondary_light;
+          box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+    .drawer_page {
+      width: 75%;
+      padding: 40px 20px;
+      background-color: $secondary_light;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

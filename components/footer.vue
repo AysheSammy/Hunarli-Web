@@ -4,14 +4,14 @@
             <img src="./../static/logo-light.svg" alt="">
         </nuxt-link>
         <div class="contacts">
-            <p class="title">Habarlaşmak</p>
+            <p class="title">{{$t('contact')}}</p>
             <div class="contact" v-for="(e, i) in contacts" :key="i">
                 <img :src="require(`./../assets/images/icons/${e.icon}`)" alt="">
                 <p class="link">{{ e.link }}</p>
             </div>
         </div>
 
-        <nuxt-link class="register" to="/registration">Registrasiýa</nuxt-link>
+        <nuxt-link class="register" v-if="!this.$store.getters.isAuthenticated" to="/registration">{{$t('register')}}</nuxt-link>
     </footer>
 </template>
 
