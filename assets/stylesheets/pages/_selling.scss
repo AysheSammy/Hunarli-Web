@@ -1,4 +1,106 @@
-.selling{
-    width: 100%;
-    height: auto;
+.selling {
+  width: 100%;
+  height: auto;
+  padding: 40px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    color: $primary-dark;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .form {
+    width: 40%;
+    margin: 0 auto;
+    .input {
+      input,
+      textarea {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        background-color: $secondary_dark;
+        border: none;
+        outline: none;
+        padding: 15px 20px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(0, 0, 0, 0.7);
+      }
+      textarea {
+        height: 145px;
+        resize: none;
+      }
+
+      .dropdown {
+        margin-bottom: 20px;
+        &_title {
+          width: 100%;
+          height: 50px;
+          background-color: $secondary_dark;
+          padding: 15px 20px;
+          @include flexbox(space-between, center);
+          cursor: pointer;
+        }
+
+        &_menu {
+          padding: 15px 20px;
+          ul {
+            list-style: none;
+            li {
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+    .image {
+      @include flexbox(flex-start, center);
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        border: 1px solid $primary_light;
+        margin-right: 15px;
+      }
+
+      .file {
+        width: 100px;
+        height: 100px;
+        background-color: $secondary_dark;
+        position: relative;
+        cursor: pointer;
+
+        input[type="file"] {
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+        }
+        svg {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      background-color: $accent_dark;
+      border: none;
+      outline: none;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: $secondary;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  }
 }

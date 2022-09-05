@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     isConfirmed() {
-      this.$store.getters['users/isConfirmed'];
+      return this.$store.getters['users/isConfirmed'];
     }
   }
 }

@@ -5,11 +5,11 @@
                 <div class="elements">
                     <div class="element" @click="search">
                         <img src="../assets/images/icons/search.svg" alt="">
-                        <p>{{ $tt('gözle', 'search') }}</p>
+                        <p>{{ $tt('gözle', 'поиск') }}</p>
                     </div>
-                    <nuxt-link to="selling" class="element">
+                    <nuxt-link :to="isAuth ? '/selling' : '/registration'" class="element">
                         <img src="../assets/images/icons/coins.svg" alt="">
-                        <p>{{ $tt('satyş', 'sell') }}</p>
+                        <p>{{ $tt('satyş', 'продавать') }}</p>
                     </nuxt-link>
                 </div>
 
@@ -20,12 +20,12 @@
                 <div class="elements">
                     <nuxt-link v-if="isAuth" to="profile" class="element">
                         <img src="../assets/images/icons/bulb.svg" alt="">
-                        <p>{{ $tt('profil', 'prolfiel') }}</p>
+                        <p>{{ $tt('profil', 'профиль') }}</p>
                     </nuxt-link>
 
                     <nuxt-link v-else to="registration" class="element">
                         <img src="../assets/images/icons/bulb.svg" alt="">
-                        <p>{{ $tt('giriş', 'login') }}</p>
+                        <p>{{ $tt('giriş', 'авторизоваться') }}</p>
                     </nuxt-link>
 
                     <div class="element" @click="seeFavorite">
@@ -33,7 +33,7 @@
                             <img src="../assets/images/icons/heart.svg" alt="">
                             <span v-if="number_liked > 0">{{ number_liked }}</span>
                         </div>
-                        <p>{{ $tt('halanlarym', 'likees') }}</p>
+                        <p>{{ $tt('halanlarym', 'нравится') }}</p>
                     </div>
                 </div>
             </header>
@@ -48,7 +48,7 @@
 
                         <div class="sub_category" v-if="e.sub_category_tm">
                             <div class="by_category">
-                                <p class="title">{{ $tt('Kategoriýa boýunça', 'By category') }}</p>
+                                <p class="title">{{ $tt('Kategoriýa boýunça', 'По категории') }}</p>
 
                                 <p v-for="(a, s) in e.sub_category_tm" :key="s">
                                     <nuxt-link v-if="lang == 'tm'" to="/products">{{ a }}</nuxt-link>
@@ -61,7 +61,7 @@
 
                             </div>
                             <div class="by_price">
-                                <p class="title">{{ $tt('Bahasy boýunça', 'By costs') }}</p>
+                                <p class="title">{{ $tt('Bahasy boýunça', 'По цене') }}</p>
 
                                 <p>
                                     <nuxt-link to="/products">50M - 200M</nuxt-link>
@@ -75,7 +75,7 @@
 
                             </div>
                             <div class="best_sellers">
-                                <p>{{ $tt('Satyjylardan köp satanlar', 'Cok satanlar') }}</p>
+                                <p>{{ $tt('Satyjylardan köp satanlar', 'Бестселлеры') }}</p>
                                 <div class="best_sellers_products">
                                     <VueSlickCarousel v-bind="settings">
                                         <div v-for="(e, i) in best_sellers" :key="i">
@@ -94,7 +94,7 @@
                             }}</button>
                     </li>
                 </ul>
-                <nuxt-link to="/products" class="categories_title">{{$tt('Kategoriýalar', 'Категории')}}</nuxt-link>
+                <nuxt-link to="/products" class="categories_title">{{ $tt('Kategoriýalar', 'Категории') }}</nuxt-link>
             </nav>
 
         </div>
@@ -200,7 +200,7 @@ export default {
         search() {
             this.isSearchActive = !this.isSearchActive;
         },
-        seeFavorite(){
+        seeFavorite() {
             this.$emit('see-favorite');
         }
     },

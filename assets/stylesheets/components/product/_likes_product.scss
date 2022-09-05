@@ -1,0 +1,54 @@
+.likes_product {
+  width: 100%;
+  padding: 20px 0;
+  @include flexbox(flex-start, flex-start);
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .content {
+    width: 100%;
+    margin-left: 20px;
+
+    p.product_name {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: $primary;
+      height: 40px;
+    }
+    p.seller {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: $primary_light;
+    }
+
+    div {
+      margin-top: 15px;
+      @include flexbox(space-between, center);
+
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $primary_light;
+        border-bottom: 1px solid $primary_light;
+        cursor: pointer;
+      }
+
+      p.price {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: $accent_dark;
+        text-align: right;
+      }
+    }
+  }
+}

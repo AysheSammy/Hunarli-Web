@@ -14,20 +14,20 @@
             <!-- {{ info.date }} -->
             18.08.2022
         </p>
-        <p class="discount">
+        <p class="discount" v-if="info.discount">
             -20%
             <!-- {{ info.discount }}% -->
         </p>
         <div class="new">
-            <p>{{$tt('täze', 'новый')}}</p>
-            <span to="#" class="like" @click="like()">
+            <p v-if="info.isNew">{{ $tt('täze', 'новый') }}</p>
+            <span to="#" class="like" @click="like(info)">
                 <!-- {{ info.price }}M -->
                 20.20M
                 <img src="../../assets/images/icons/heart-filled.svg" v-if="isLiked">
                 <img src="../../assets/images/icons/heart.svg" v-else>
             </span>
         </div>
-    </nuxt-link> 
+    </nuxt-link>
 </template>
 
 <script>
@@ -45,8 +45,12 @@ export default {
     },
     methods: {
         like() {
-            this.$store.dispatch('addLike', this.info);
             this.isLiked = !this.isLiked;
+            if (this.isLiked) {
+                this.$store.dispatch('addLike', { product: this.info });
+            } else {
+                this.$store.dispatch('addLike', { product: this.info });
+            }
         }
     }
 

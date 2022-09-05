@@ -22,7 +22,8 @@
             </ul>
         </div>
         <div class="page_products">
-            <Product v-for="i in categories[parentCategory].sub_category_tm" :key="i" />
+            <Product v-for="(e, i) in products" :key="i" :info="e" />
+
         </div>
     </div>
 </template>
@@ -36,22 +37,26 @@ export default {
     data() {
         return {
             parentCategory: 0,
+            subFolder: 'meals/products'
         }
     },
     methods: {
         showSubCategories(id) {
             this.parentCategory = id;
+            this.subFolder = this.categories[this.parentCategory].folder;
             this.$store.dispatch('categories/changeActive', { index: this.parentCategory })
-            console.log(this.$store.state['categories/categories[this.parentCategory].active'])
         }
     },
     computed: {
         categories() {
             return this.$store.getters['categories/categories'];
         },
-        lang(){
+        products() {
+            return this.$store.getters[this.subFolder]
+        },
+        lang() {
             return this.$i18n.locale
-        }
+        },
     }
 
 }

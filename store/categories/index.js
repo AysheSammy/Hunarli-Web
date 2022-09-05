@@ -21,6 +21,7 @@ export const state = () => {
         ],
         href: "/products",
         active: false,
+        folder: 'meals/products'
       },
       {
         id: 2,
@@ -42,6 +43,7 @@ export const state = () => {
         ],
         href: "/products",
         active: false,
+        folder: 'clothes/products'
       },
       {
         id: 3,
@@ -51,6 +53,7 @@ export const state = () => {
         sub_category_ru: ["Браслет", "Ожерелье", "Корона", "Кольцо"],
         href: "/products",
         active: false,
+        folder: 'jewelry/products'
       },
       {
         id: 4,
@@ -60,6 +63,7 @@ export const state = () => {
         sub_category_ru: ["Şekerlik", "Ручной работы", "Магнитный"],
         href: "/products",
         active: false,
+        folder: 'wedding/products'
       },
       {
         id: 5,
@@ -77,6 +81,7 @@ export const state = () => {
         ],
         href: "/products",
         active: false,
+        folder: 'toys/products'
       },
     ],
   };

@@ -8,15 +8,17 @@
 @import "./components/serach_bar";
 @import "./components/likes_drawer";
 // product
-@import "./components/product/banner_product", "./components/product/product";
+@import "./components/product/banner_product", "./components/product/product",
+  "./components/product/likes_product";
 // registration
 @import "./components/registration/signUp";
 // profile
-@import "./components/profile/profil",
-  "./components/profile/likes", "./components/profile/my_products";
+@import "./components/profile/profil", "./components/profile/likes",
+  "./components/profile/my_products";
 
 // pages
 @import "./pages/index";
 @import "./pages/products";
 @import "./pages/registration";
 @import "./pages/profile/profile";
+@import "./pages/selling";

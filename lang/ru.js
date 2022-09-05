@@ -2,11 +2,11 @@ export default {
   language: "ru",
 
   // registration => sign in
-  userDataPlaceholder: "ajksdhflskhfdlshdf sdfg sd",
-  userPassword: "Açar sözi",
-  send_btn_text: "Ugrat",
-  youSigned: "Akkaundyňyz ýokmy?",
-  signUp: "Agza bol",
+  userDataPlaceholder: "Номер телефона или имя пользователя",
+  userPassword: "Ключевое слово",
+  send_btn_text: "Отправлять",
+  youSigned: "У вас нет аккаунта?",
+  signUp: "Регистр",
 
   // registration => sign up
   register: "Регистрация",
@@ -14,13 +14,13 @@ export default {
   username: "Имя ползаватель",
   phone: "Телефон номер",
   address: "Адресс",
-  confirmPassword: "Açar sözüni tassykla",
-  youLogged: "Akkaundyň barmy?",
+  confirmPassword: "Подтвердить Пароль",
+  youLogged: "У тебя есть аккаунт?",
   login: "Выход",
 
   // search bar
-  searchText: "Gözleg sözi",
-  search: "Gözle",
+  searchText: "Искать термин",
+  search: "Поиск",
 
   // footer
   contact: "Контакт",

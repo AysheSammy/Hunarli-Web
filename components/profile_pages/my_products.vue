@@ -3,7 +3,7 @@
       <h4>Goýan harytlarym</h4>
       <p class="date">02.09.2022</p>
       <div class="products">
-          <Product v-for="(e, i) in 5" :key="i" :info="e" />
+          <Product v-for="i in 5" :key="i" :info="likedProducts[i]" />
       </div>
   </div>
 </template>

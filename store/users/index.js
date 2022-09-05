@@ -6,7 +6,10 @@ export const state = () => {
         name: "Ayshe",
         username: "Ashley",
         phone: "+99365833299",
-        address: ["Ashgabat city Gagarin street", "Mary city Kerki street"],
+        address: [
+          "Bla bla bla bla bla bla ...",
+          "Another Bla bla bla bla bla..",
+        ],
         password: "DandikBirParola!",
         regTime: "25.08.2022",
       },
@@ -50,7 +53,7 @@ export const actions = {
     return context.commit("authenticateUser", payload);
   },
   confirmed(context) {
-    return context.commit("confirm", { bool: true });
+    context.commit("confirm", { bool: true });  
   },
   notConfirmed(context) {
     return context.commit("confirm", { bool: false });

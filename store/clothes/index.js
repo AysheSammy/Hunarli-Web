@@ -74,10 +74,10 @@ export const state = () => {
 }
 
 export const getters = {
-    clothes (state){
+    products (state){
         return state.products;
     },
     featuredClothes(_, getters){
-        return getters.clothes.filter((e) => e.likes >= 5);
+        return getters.products.filter((e) => e.likes >= 5);
     }
 }

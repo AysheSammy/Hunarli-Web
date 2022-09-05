@@ -6,7 +6,7 @@
         </div>
         <div class="banner_info">
             <h2>{{ $tt(infos.title_tm, infos.title_ru) }}</h2>
-            <button>{{ $tt('Ýene gör', 'Posmotret wse') }}</button>
+            <nuxt-link to="/products" >{{ $tt('Ýene gör', 'Posmotret wse') }}</nuxt-link>
         </div>
 
     </div>

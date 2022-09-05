@@ -85,7 +85,7 @@ export default {
             this.seeConfirmPasswordData = !this.seeConfirmPasswordData;
         },
         confirmed() {
-            return this.$store.dispatch('users/confirmed');
+            this.$store.dispatch('users/confirmed');
         }
     },
 }

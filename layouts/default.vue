@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <Header @see-favorite="see_likes" />
-        <Likes_drawer v-if="showLikes" />
+        <Likes_drawer v-if="showLikes" @dont-show-likes="dontShowLikes" />
         <nuxt />
         <Footer v-if="route_path != '/registration'" />
     </div>
@@ -31,6 +31,9 @@ export default {
     methods: {
         see_likes(){
             return this.showLikes = !this.showLikes;
+        },
+        dontShowLikes(){
+            return this.showLikes = false;
         }
     }
 }

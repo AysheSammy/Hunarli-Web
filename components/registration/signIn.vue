@@ -1,6 +1,6 @@
 <template>
     <div class="sign">
-        <h4>Giriş</h4>
+        <h4>{{$t('login')}}</h4>
 
         <div class="form">
             <input type="text" name="username" id="username" :placeholder="$t('userDataPlaceholder')"
@@ -46,11 +46,9 @@ export default {
             this.seePasswordData = !this.seePasswordData;
         },
         notConfirmed() {
-            return this.$store.dispatch('users/notConfirmed');
+            this.$store.dispatch('users/notConfirmed');
         }
     }
-
-
 }
 </script>
 

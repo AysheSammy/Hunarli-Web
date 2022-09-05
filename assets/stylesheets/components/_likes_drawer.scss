@@ -1,0 +1,33 @@
+.likes_drawer {
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 150px;
+  right: 0;
+  background-color: $secondary_light;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px 40px;
+  z-index: 100;
+  .links {
+    @include flexbox(space-between, center);
+    border-bottom: 1px solid $secondary_dark;
+    padding: 10px 0;
+
+    div,
+    a {
+      @include flexbox(center, center);
+      cursor: pointer;
+
+      svg {
+        margin: 5px 10px;
+      }
+      p {
+        color: $primary;
+      }
+    }
+  }
+
+  .products {
+    width: 100%;
+  }
+}

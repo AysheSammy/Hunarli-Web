@@ -30,6 +30,12 @@ export default {
   personal_btn_text: "Ýatda saklat",
 
   // likes drawer
-  continue_shopping: "Bazarlamga dowam et",
+  continue_shopping: "Bazarlamaga dowam et",
   see_likes: "Halanlaryma git",
+
+//   add product
+add_product_name: 'Harydyň ady',
+add_product_price: 'Harydyň bahasy',
+add_product_description: 'Haryt barada başga maglumatlar',
+add_product_address: 'Adres giriz',
 };

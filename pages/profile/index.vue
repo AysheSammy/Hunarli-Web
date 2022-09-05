@@ -22,7 +22,7 @@
 
 <script>
 import ProfilPage from '@/components/profile_pages/profil.vue';
-import MyProducts from '@/components/profile_pages/my_products.vue';
+import MyProducts from '~/components/profile_pages/my_products.vue';
 import LikesPage from '@/components/profile_pages/likes.vue';
 
 export default {
